@@ -95,23 +95,46 @@ h1, h2, h3, h4, h5, h6, p, a{
 }
 
 .navlink{
+    transition: 500ms;
     font-size: 20px;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+}
+
+.navlink:hover{
+    transition: 500ms;
+    text-shadow: 0px 0px 70px var(--color-font);
 }
 
 .nvimg{
-    margin-right: 5px;
+    margin-right: 13px;
+    height: 30px;
+    width: 30px;
+    border-radius: 0px !important;
+}
+
+.svh{
+    margin-right: 13px;
+    width: 30px;
     height: 30px;
 }
 
-.hdr{
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hdr{
     border-left: 2px solid var(--color-font);
     height: 40px;
     border-radius: 10px;
-    margin-right: 17.5px;
+    margin-right: 18.5px;
+    margin-left: 8.5px;
+    
 }
 
 .sqr{
@@ -127,6 +150,15 @@ h1, h2, h3, h4, h5, h6, p, a{
 #title{
     font-size: 30px;
     margin-right: 1%;
+}
+
+#titl{
+    font-size: 20px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .hh{
