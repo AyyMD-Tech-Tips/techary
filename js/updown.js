@@ -16,7 +16,7 @@ $(document).ready(function(){
                 $post.parent().find('span.ups_count');
                 $post.addClass('hide');
                 $post.siblings().removeClass('hide');
-                console.log(response);
+                
                 
             }
         });
