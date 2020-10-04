@@ -11,7 +11,7 @@ page_soup = soup(page_html, "html.parser")
 
 titles = page_soup.findAll("div",{"class":"thumb-title"})
 
-filename = "items_nova.csv"
+filename = "items_nova.txt"
 f = open(filename, "w")
 headers = "headline, link\n"
 f.write(headers)

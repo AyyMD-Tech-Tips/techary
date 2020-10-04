@@ -1,13 +1,14 @@
 <?php 
+    
     function setComments($conn){
         if(isset($_POST['commentSubmit'])){
-            $uid = $_POST['uid'];
+            $uid = $_SESSION['username'];
             $date = $_POST['date'];
             $title = $_POST['title'];
             $post = $_POST['post'];
 
             $sql = "INSERT INTO `posts` (uid, date, title, post) VALUES ('$uid' , '$date' , '$title', '$post')";
-            
+            var_dump($sql);
             $result = $conn->query($sql);
             
         }

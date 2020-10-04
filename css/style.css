@@ -1,19 +1,33 @@
+@font-face {
+  font-family: 'Product Sans Black Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Black Regular'), url('../fonts/ProductSans-Black.woff') format('woff');
+}
+
+@font-face{
+  font-family: 'Product Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Black Regular'), url('../fonts/ProductSans-Regular.woff') format('woff');
+
+}
 * {
   margin: 0px;
   padding: 0px;
 }
 body {
   font-size: 120%;
-  background: #F8F8FF;
+  background: #000000;
 }
 
 .header {
   width: 30%;
   margin: 50px auto 0px;
-  color: white;
-  background: #5F9EA0;
+  color: #ffffff;
+  background: #3f3f3fb0;
   text-align: center;
-  border: 1px solid #B0C4DE;
+  
   border-bottom: none;
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
@@ -22,12 +36,14 @@ form, .content {
   width: 30%;
   margin: 0px auto;
   padding: 20px;
-  border: 1px solid #B0C4DE;
-  background: white;
+  color: #ffffff;
+  background: #3f3f3fb0;
   border-radius: 0px 0px 10px 10px;
 }
 .input-group {
   margin: 10px 0px 10px 0px;
+  color: #ffffff;
+  baca
 }
 .input-group label {
   display: block;
@@ -40,13 +56,13 @@ form, .content {
   padding: 5px 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid gray;
+  
 }
 .btn {
   padding: 10px;
   font-size: 15px;
-  color: white;
-  background: #5F9EA0;
+  color: #ffffff;
+  background: #383838;
   border: none;
   border-radius: 5px;
 }
