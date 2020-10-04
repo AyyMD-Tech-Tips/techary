@@ -75,11 +75,12 @@
                 <div id="post" class="div">
                     <?php
                         echo"
-                            <form class='post' style='margin-bottom: 10px' id='com'method='POST' action='".setComments($conn, 'comments')."'>
+                            <form class='post' style='margin-bottom: 10px' id='com'method='POST' action='".setComments($conn, 'posts')."'>
                                 <h1 style='margin: 0 0; margin-bottom: 5px'>Post:</h1>
-                                <input class='ff' type='text' name='uid' require placeholder='Title'>
+                                <input type='hidden' name='uid' value=''>
+                                <input class='ff' type='text' name='title' require placeholder='Title'>
                                 <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-                                <textarea class='ff' name='message' require placeholder='What is on your mind'></textarea>
+                                <textarea class='ff' name='post' require placeholder='What is on your mind'></textarea>
                                 <button class='ff' type='submit' name='commentSubmit' id='submit'>Comment</button>
                             </form>
                         ";
@@ -107,7 +108,7 @@
             </div>
             <div id="comment_section">
                 <div id="comments">
-                    <?php getComments($conn, 'comments'); ?> 
+                    <?php getComments($conn, 'posts'); ?> 
                 </div>
             </div>
         </div>
