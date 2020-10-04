@@ -185,6 +185,11 @@ h1, h2, h3, h4, h5, h6, p, a{
     padding-right: 10px;
 }
 
+#abc{
+    display: flex;
+    justify-content: center;
+}
+
 /* Ads */
 
 div#amzn-native-ad-0 div.amzn-native-products-list div.amzn-native-product{
@@ -212,3 +217,6 @@ div#amzn-native-ad-0 div.amzn-native-products-list div.amzn-native-product{
 
     
 }
+
+/* */ 
+
