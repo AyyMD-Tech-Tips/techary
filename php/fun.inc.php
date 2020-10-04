@@ -25,12 +25,12 @@
                     <p>".nl2br($row['post'])."</p>
                     <div id='funcs'>
                         <div class='upvote fu'>
-                            <p>".$row['up']."</p>
-                            <button style='margin-right: 10px' class='ffff' type='button' name='upvote' id='upvote'>Upvote</button>
+                            <p class='ups_count'>".$row['up']."</p>
+                            <button style='margin-right: 10px' class='upvote ffff' type='button' id='".$row['cid']."'>Upvote</button>
                         </div>
                         <div class='downvote fu'>
-                            <p>".$row['down']."</p>
-                            <button class='ffff' type='button' name='downvote' id='downvote'>Downvote</button>
+                            <p class='downs_count'>".$row['down']."</p>
+                            <button class='downvote ffff' type='button' id='".$row['cid']."'>Downvote</button>
                         </div>
                     </div>
                 </div>

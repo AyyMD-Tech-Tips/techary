@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/main.css">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body id="body">
+
     <header class="hh" data-aos="zoom-in-up">
         <div class="hhi">
             <div class="div sqr">
@@ -108,18 +110,51 @@
             </div>
             <div id="comment_section">
                 <div id="comments">
-                    <?php getComments($conn); ?> 
+                    <?php getComments($conn, 'posts'); ?> 
                 </div>
             </div>
         </div>
     </div>
     <script src="js/mobile.js"></script>
     <script src="js/style.js"></script>
+    <script src="js/updown.js"></script>
     <script>
         if( window.history.replaceState ){
             window.history.replaceState( null, null, window.location.href );
         }
     </script>
+    
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'techary');
+var_dump($_POST);
+if (isset($_POST['upvoted'])) {
+    echo "rgr";
+    $postid = $_POST['postid'];
+    $result = mysqli_query($con, "SELECT `up` FROM `posts` WHERE cid=$postid");
+    $row = mysqli_fetch_array($result);
+    $n = $row['up'];
+    
+    mysqli_query($con, "INSERT INTO `upvoted` (userid, postid) VALUES (1, $postid)");
+    mysqli_query($con, "UPDATE `posts` SET up=$n+1 WHERE cid=$postid");
 
+    
+    exit();
+}
+if (isset($_POST['downvoted'])) {
+    $postid = $_POST['postid'];
+    $result = mysqli_query($con, "SELECT `down` FROM `posts` WHERE cid=$postid");
+    $row = mysqli_fetch_array($result);
+    $n = $row['down'];
+
+    mysqli_query($con, "INSERT INTO `downvoted` (userid, postid) VALUES (1, $postid)");
+    mysqli_query($con, "UPDATE `posts` SET down=$n+1 WHERE cid=$postid");
+    
+
+    
+    exit();
+}
+
+
+?>
 </body>
 </html>
