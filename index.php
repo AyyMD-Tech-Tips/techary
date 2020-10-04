@@ -1,7 +1,27 @@
 <?php
+    session_start(); 
+    $db = mysqli_connect('localhost', 'root', 'pass', 'techary');
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }else{
+        $query = "SELECT `email`, `birth_date`, `profile_picture` FROM `accounts` WHERE username='".$_SESSION['username']."'";
+        
+        $result = mysqli_query($db, $query);
+       
+        while($row = $result->fetch_assoc()){
+            $username = $_SESSION['username'];
+            
+            $email = $row['email'];
+            $bday = $row['birth_date'];
+            $pic = $row['profile_picture'];
+        }
+    }
+
     date_default_timezone_set('Europe/Sofia');
     include 'php/conn.inc.php';
     include 'php/fun.inc.php';
+    
 ?>
 
 
@@ -64,6 +84,12 @@
                             <p class="atext">Coronavirus</p>
                         </a>
                     </div>
+                    <div class="navlink">
+                        <a class="link" post="Logout" href="">
+                            <img src="img/cov-w.png" class="nvimg" alt="">
+                            <p class="atext">Log Out</p>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="dw_btn" class="div sqr">
@@ -90,13 +116,15 @@
                 </div>
                 <div id="account_info" class="div">
                     <div id="profile_info">
-                        <img id='profile_pic' name='profile_pic' src="https://via.placeholder.com/500x500.pngC/O" alt="">
+                    <?php echo '
+                        <img id="profile_pic" name="profile_pic" src="'.$pic.'" alt="">
                         <div>
-                            <h1><span id="first_name" name='first_name'>first_name</span><br><span id="last_name" name='last_name'>last_name</span></h1>
+                            <h1><span id="first_name" name="first_name">'.$username.'</span></h1>
                             <hr>
-                            <h2 id="at" name='at'>@at_something</h2>
-                            <h3 id="birthday" name='birthday'>01-01-1970</h3>
-                        </div>
+                            <h2 id="at" name="at">'.$email.'</h2>
+                            <h3 id="birthdate" name="birthday">'.$bday.'</h3>
+                        </div> ';
+                    ?>
                     </div>
                     <hr style="margin: 25px;">
                     <div id="bio">
@@ -125,7 +153,7 @@
     </script>
     
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'techary');
+$con = mysqli_connect('localhost', 'root', 'pass', 'techary');
 var_dump($_POST);
 if (isset($_POST['upvoted'])) {
     echo "rgr";
@@ -153,8 +181,10 @@ if (isset($_POST['downvoted'])) {
     
     exit();
 }
-
-
+if(isset($_POST['Logout'])){
+session_destroy(); 
+header("location: login.php");
+}
 ?>
 </body>
 </html>
