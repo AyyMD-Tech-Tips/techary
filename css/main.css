@@ -1,61 +1,117 @@
-
-
-.content h1{
-    font-size: 60px;
-}
-
-.content h2{
-    font-size: 45px;
-}
-
-#fpt{
-    height: calc(100vh - 140px);
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#fpt a{
-    position: absolute;
-    bottom: 70px;
-    right: 50;
-    text-transform: uppercase;
-    font-size: 20px;
-    padding: 10px;
-}
-
-#blog{
-    height: calc(100vh - 140px);
-    padding-top: 70px;
-}
-
-.article{
-    height: calc(100% - 20px);
-    margin-top: 10px;
+.content{
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    justify-content: center;
+    width: 100%;
+    justify-self: center;
 }
 
-.article img {
-    width: 45%;
-    margin: 5px;
-    align-self: center;
+.post{
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
 }
 
-.article p{
+.ff{
+    margin-top: 13px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 10px 0.5px var(--color-shadow);
+    background-color: var(--color-primary);
+    transition: 500ms;
+}
+
+input.ff{
     font-size: 17px;
 }
 
+textarea.ff{
+    height: 100px;
+    resize: none;
+    font-size: 17px;
+}
+
+.ffff{
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 10px 0.5px var(--color-shadow);
+    background-color: var(--color-primary);
+    transition: 500ms;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.ff:hover{
+    background-color: var(--color-hover);
+    transition: 500ms;
+}
+
+.ff:focus{
+    outline: none
+}
+
+.commenty{
+    margin-bottom: 13px;
+}
+
+
+#comment_section{
+    width: 80%;
+}
+
+#combined{
+    margin-right: 13px;
+    width: 40%;
+}
+
+#post{
+    margin-bottom: 13px;
+}
+
+#profile_pic{
+    width: 40%;
+    border-radius: 100%;
+    margin-right: 26px;
+}
+
+#profile_info{
+    display: flex;
+    align-items: center;
+}
+
+#search{
+    margin-top: 13px;
+}
+
+#funcs{
+    display: flex;
+    margin-top: 13px;
+}
+
+.fu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    font-size: 25px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 @media screen and (max-width: 800px){
-    .article{
-        flex-direction: column;
+    #comment_section{
+        width: 100% !important;
     }
-    .article img{
-        height: unset;
-        width: 100%;
+
+    .post{
+        width: calc(100% - 27px) !important;
+    }
+    .commenty{
+        width: calc(100% - 20px) !important;
     }
 }

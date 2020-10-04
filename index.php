@@ -1,3 +1,10 @@
+<?php
+    date_default_timezone_set('Europe/Sofia');
+    include 'php/conn.inc.php';
+    include 'php/fun.inc.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,10 +69,49 @@
             </div>
         </div>
     </header>
-    <div id="content" class="content">
-
+    <div id="abc">
+        <div id="content" class="content">
+            <div id="combined">
+                <div id="post" class="div">
+                    <?php
+                        echo"
+                            <form class='post' style='margin-bottom: 10px' id='com'method='POST' action='".setComments($conn, 'comments')."'>
+                                <h1 style='margin: 0 0; margin-bottom: 5px'>Post:</h1>
+                                <input class='ff' type='text' name='uid' require placeholder='Title'>
+                                <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                                <textarea class='ff' name='message' require placeholder='What is on your mind'></textarea>
+                                <button class='ff' type='submit' name='commentSubmit' id='submit'>Comment</button>
+                            </form>
+                        ";
+                    ?>
+                </div>
+                <div id="account_info" class="div">
+                    <div id="profile_info">
+                        <img id='profile_pic' name='profile_pic' src="https://via.placeholder.com/500x500.pngC/O" alt="">
+                        <div>
+                            <h1><span id="first_name" name='first_name'>first_name</span><br><span id="last_name" name='last_name'>last_name</span></h1>
+                            <hr>
+                            <h2 id="at" name='at'>@at_something</h2>
+                            <h3 id="birthday" name='birthday'>01-01-1970</h3>
+                        </div>
+                    </div>
+                    <hr style="margin: 25px;">
+                    <div id="bio">
+                        <h1>Bio:</h1>
+                        <p></p>
+                    </div>
+                </div>
+                <div id="search" class="div">
+                     <h1>Search:</h1>   
+                </div>
+            </div>
+            <div id="comment_section">
+                <div id="comments">
+                    <?php getComments($conn, 'comments'); ?> 
+                </div>
+            </div>
+        </div>
     </div>
-
     <script src="js/mobile.js"></script>
     <script src="js/style.js"></script>
 

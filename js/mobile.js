@@ -45,7 +45,7 @@ function mobile(){
         con.style.paddingBottom = '10px';
         con.style.paddingTop = '10px';
         con.style.marginBottom = '7px';
-        con.style.height = '60px'
+        con.style.height = '40px'
         var cons = document.getElementsByClassName('container');
 
         var navbar = document.createElement('div');
@@ -70,9 +70,8 @@ function mobile(){
         con.appendChild(navbar);
         hhi.appendChild(con);
         var bb = document.getElementById('body');
-        bb.style.marginBottom = '70px'
+        bb.style.marginBottom = '60px'
         bb.appendChild(hhi);
-        bb.style.marginBottom = '70px'
         for(var i = 0; i < cons.length; ++i){
             cons[i].style.width = '95%'
         }
