@@ -22,6 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body id="body">
+
     <header class="hh" data-aos="zoom-in-up">
         <div class="hhi">
             <div class="div sqr">
@@ -117,6 +118,12 @@
     <script src="js/mobile.js"></script>
     <script src="js/style.js"></script>
     <script src="js/updown.js"></script>
+    <script>
+        if( window.history.replaceState ){
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+    
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'techary');
 var_dump($_POST);
@@ -141,6 +148,7 @@ if (isset($_POST['downvoted'])) {
 
     mysqli_query($con, "INSERT INTO `downvoted` (userid, postid) VALUES (1, $postid)");
     mysqli_query($con, "UPDATE `posts` SET down=$n+1 WHERE cid=$postid");
+    
 
     
     exit();
