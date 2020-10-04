@@ -8,7 +8,7 @@ $errors = array();
 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'pass', 'techary');
+$db = mysqli_connect('localhost', 'root', '', 'techary');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
