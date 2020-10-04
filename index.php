@@ -115,6 +115,11 @@
     </div>
     <script src="js/mobile.js"></script>
     <script src="js/style.js"></script>
+    <script>
+        if( window.history.replaceState ){
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 
 </body>
 </html>
