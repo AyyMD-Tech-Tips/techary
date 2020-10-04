@@ -54,11 +54,16 @@ if (isset($_POST['reg_user'])) {
     if (count($errors) == 0) {
         $password = md5($password_1);//encrypt the password before saving in the database
 
-        $query = $db->prepare("INSERT INTO accounts(username, email, password, birthdate, name ) VALUES(?, ?, ?, ?, ?)");
-        $query->bind_param("sssss", $username, $email, $password, $date, $username);
-
+        $query = $db->prepare("INSERT INTO `accounts` (`username`, `email`, `password`, `birth_date`) VALUES (?, ?, ?, ?)");
+        $query->bind_param("ssss", $username, $email, $password, $date);   
+        //$query = "INSERT INTO `accounts` (`username`, `email`, `password`, `birth_date`) VALUES ('$username', '$email', '$password', '$date')";
+        //if(!mysqli_query($db, $query)){
+         //   echo "tUp";
+        //}
+        //printf("%d Row inserted.\n", mysqli_stmt_affected_rows($query));
         $query->execute();
         $query->close();
+        //$friend_list = ""
     }
 
 }
@@ -76,12 +81,19 @@ if (isset($_POST['login_user'])) {
     
     if (count($errors) == 0) {
         $password = md5($password);
-        $query = "SELECT * FROM users WHERE username='$username' OR email='$username' AND password='$password'";
+        $query = "SELECT * FROM accounts WHERE username='$username' OR email='$username' AND password='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: index.php');
+            
+            $update = "UPDATE `accounts` SET `status` = true WHERE `username`='$username'";
+            //mysqli_query($db, $update);
+            if (!mysqli_query($db, $update)) {
+                echo "Error: " . mysqli_error($db);
+            }
+            //echo "proveri";
+            //header('location: index.php');
         }else {
             array_push($errors, "Wrong username/password combination");
         }
