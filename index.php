@@ -75,7 +75,7 @@
                 <div id="post" class="div">
                     <?php
                         echo"
-                            <form class='post' style='margin-bottom: 10px' id='com'method='POST' action='".setComments($conn, 'posts')."'>
+                            <form class='post' style='margin-bottom: 10px' id='com'method='POST' action='".setComments($conn)."'>
                                 <h1 style='margin: 0 0; margin-bottom: 5px'>Post:</h1>
                                 <input type='hidden' name='uid' value=''>
                                 <input class='ff' type='text' name='title' require placeholder='Title'>
@@ -108,7 +108,7 @@
             </div>
             <div id="comment_section">
                 <div id="comments">
-                    <?php getComments($conn, 'posts'); ?> 
+                    <?php getComments($conn); ?> 
                 </div>
             </div>
         </div>

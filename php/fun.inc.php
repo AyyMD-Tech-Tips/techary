@@ -1,19 +1,20 @@
 <?php 
-    function setComments($conn, $d){
+    function setComments($conn){
         if(isset($_POST['commentSubmit'])){
             $uid = $_POST['uid'];
             $date = $_POST['date'];
             $title = $_POST['title'];
             $post = $_POST['post'];
 
-            $sql = "INSERT INTO $d (uid, date, title, post, up, down) VALUES ('$uid' , '$date' , '$title' '$post')";
+            $sql = "INSERT INTO `posts` (uid, date, title, post) VALUES ('$uid' , '$date' , '$title', '$post')";
             
             $result = $conn->query($sql);
+            
         }
     }
 
-    function getComments($conn, $d){
-        $sql = "SELECT * FROM $d ORDER BY `cid` ASC";
+    function getComments($conn){
+        $sql = "SELECT * FROM `posts` ORDER BY `cid` ASC";
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()){
             echo "
