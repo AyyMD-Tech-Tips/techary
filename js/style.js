@@ -1,8 +1,8 @@
 var themed;
 
-let tog = document.getElementById('toggle')
-let logo = document.getElementById('lg')
-let links = document.getElementsByClassName('nvimg')
+let tog = document.getElementById('toggle');
+let logo = document.getElementById('lg');
+let links = document.getElementsByClassName('nvimg');
 
 let lgw = new Array(links.length);
 let lgb = new Array(links.length);

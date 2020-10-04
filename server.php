@@ -8,7 +8,7 @@ $errors = array();
 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'techary');
+$db = mysqli_connect('localhost', 'root', 'pass', 'techary');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -93,7 +93,7 @@ if (isset($_POST['login_user'])) {
                 echo "Error: " . mysqli_error($db);
             }
             //echo "proveri";
-            //header('location: index.php');
+            header('location: index.php');
         }else {
             array_push($errors, "Wrong username/password combination");
         }
