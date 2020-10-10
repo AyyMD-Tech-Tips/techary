@@ -6,6 +6,8 @@
 Techary обединява всичко добро от всяка социална медия на едно място!
 
 ## Презентация (+ видео):
+[![Techary](https://img.youtube.com/vi/RoyMNYmbVsA/0.jpg)](https://www.youtube.com/watch?v=RoyMNYmbVsA)
+
 https://drive.google.com/drive/folders/1Nogx-NJfMvIYUsMfR9J56yw_lxexok32?usp=sharing
 
 ## Как да си сваля и използвам проекта?
